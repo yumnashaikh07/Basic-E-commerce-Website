@@ -1,113 +1,153 @@
+import React from "react";
+import ProductCard from "@/components/productcard";
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
-export default function Home() {
+const products = [
+  {
+    title: "Eco",
+    price: "$17",
+    image: "/tote01.jpeg",
+  },
+  {
+    title: "Lemonade",
+    price: "$24",
+    image: "/tote44.jpg",
+  },
+  {
+    title: "Slay",
+    price: "$28",
+    image: "/tote55.jpg",
+  },
+  {
+    title: "Joy",
+    price: "$17",
+    image: "/tote2.jpg",
+  },
+];
+
+export default function Homepg() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main>
+      <section className=" bg-[#bfa179] mx-auto grid grid-cols-1 md:grid-cols-2 ">
+        <div>
+          <Image
+            // src={"/image.png"}
+            src={"/RAYS (12).png"}
+            width={535}
+            height={400}
+            alt="Logo"
+          />
         </div>
-      </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
+        <div className=" md:p-16 p-10 header-bg ">
+          <h1 className="text-3xl md:text-5xl  md:font-semibold md:mt-3 ">
+            Wrap Your Loved Ones in Tote-ally Great Gifts!
+          </h1>
+          <div className="md:flex flex-col hidden">
+            <p className=" md:text-xl text-lg mt-5 ">
+            Elevate your gifting with
+            <span className="font-semibold"> RAY’S</span> trendy totes!
           </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
+          <p className=" md:text-xl text-lg ">
+            {" "}
+            Perfect for every personality, these tote-ally{" "}
           </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
+          <p className="md:text-xl text-lg mb-5 ">
+            amazing gifts are sure to impress.
           </p>
-        </a>
+          </div>
+          <div className="md:hidden my-5">
+            <p>Elevate your gifting with <span className="font-semibold"> RAY’S</span> trendy totes!
+            Perfect for every personality, these tote-ally amazing gifts are sure to impress.</p>
+          </div>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+
+          <Link href={"/shoptote"}><Button className="bg-[#bfa179] hover:bg-[#fff] text-black md:px-9 md:py-6 px-5 py-5 font-base md:mt-5 text-lg md:text-xl">
+            Shop Now
+          </Button></Link>
+        </div>
+      </section>
+      <section className="grid  sm:grid-cols-1 md:grid-cols-3 gap-5 mx-auto">
+        <Image src={"/tote22.jpg"} alt="" width={400} height={300} />
+        <Image src={"/tote2.jpg"} alt="" width={425} height={500} />
+        <Image src={"/tote2back.jpg"} alt="" width={425} height={500} />
+      </section>
+      <div className="md:border-t-[1px] border-[#c2c0c0]   w-[1250px] mb-16"></div>
+      <section className="grid  sm:grid-cols-1 md:grid-cols-2  ">
+        <div>
+          <Image
+            //  src={"/printify 1 (totebag).jpeg"}
+            src={"/tote555.jpg"}
+            alt=""
+            width={600}
+            height={500}
+          />
+          <h1 className="text-2xl font-semibold hero-font ml-36  md:ml-64">
+            BACK
+          </h1>
+        </div>
+        <div>
+          <Image src={"/tote55.jpg"} alt="" width={600} height={500} />
+          <h1 className="text-2xl font-semibold hero-font ml-32 md:ml-64 ">
+            FRONT
+          </h1>
+        </div>
+      </section>
+
+      <div className="md:border-t-[1px] border-[rgb(194,192,192)] mt-9 ml-2  w-[1250px]"></div>
+      <section className="container mx-auto p-10 md:p-20">
+        <h1 className="flex md:justify-center text-center mb-20 items-center  text-5xl font-bold">
+          Hot Selling Totes
+        </h1>
+        <div className="md:gap-7 md:space-y-0 space-y-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+          {products.map((product, index) => (
+            <ProductCard
+              key={index}
+              title={product.title}
+              price={product.price}
+              image={product.image}
+            />
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <div className="md:border-t-[1px] border-[#c2c0c0] mb-5 ml-2  w-[1250px]"></div>
+        <h1 className="flex md:justify-center text-center items-center text-5xl font-bold">
+          Glimpse Of Our LookBook
+        </h1>
+        <div className="md:border-b-[1px] border-[#c2c0c0] mt-5 ml-2  w-[1250px]"></div>
+
+        <div className=" my-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 ">
+          <div>
+            <Image
+              src={"/tote4mockup.jpg"}
+              height={100}
+              width={300}
+              alt="category"
+            />
+          </div>
+          <div>
+            <Image
+              src={"/tote5.jpg"}
+              height={100}
+              width={300}
+              alt="category"
+              className="md:ml-14"
+            />
+          </div>
+          <div>
+            <Image
+              src={"/tote22.jpg"}
+              height={100}
+              width={300}
+              alt="category"
+              className="md:ml-20"
+            />
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
